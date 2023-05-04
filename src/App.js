@@ -9,11 +9,6 @@ function App() {
   const [value, setValue] = useState("")
   const [bool, setBool] = useState(false)
 
-  function handlePosts(posts) {
-
-    setValue(posts.target.value)
-  }
-
   useEffect(() => {
     setPost(post.filter(item => item.location.toLowerCase().includes(value.toLowerCase())))
   }, [value])
@@ -24,46 +19,46 @@ function App() {
 
 
   return <main>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Travel <span className="script-font">Blog</span></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <div className="container-fluid">
+        <a className="navbar-brand" href="#">Travel <span className="script-font">Blog</span></a>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <a className="nav-link" href="#">About</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Popular posts</a>
+            <li className="nav-item">
+              <a className="nav-link" href="#">Popular posts</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <header class="bg-light text-dark py-5 d-none d-sm-block">
-      <div class="container text-center">
-        <h1 class="script-font">Travel is the only thing you buy that makes you richer...</h1>
+    <header className="bg-light text-dark py-5 d-none d-sm-block">
+      <div className="container text-center">
+        <h1 className="script-font">Travel is the only thing you buy that makes you richer...</h1>
       </div>
     </header>
-    <div className="py-4">
+    <div className="py-4 d-none d-sm-block">
       <form className="">
-        <label for="search" className="form-label">Search Posts by Location:</label>
-        <input type="text" value={value} className="d-inline w-50 m-2" id="search" placeholder="Enter location" onChange={(e) => handlePosts(e)} />
+        <label htmlFor="search" className="form-label">Search Posts by Location:</label>
+        <input type="text" value={value} className="d-inline w-50 m-2 px-10" id="search" placeholder="Enter location" onChange={(e) => setValue(e.target.value)} />
         <button type="click" className="btn btn-secondary m-3" onClick={() => setPost(postData)}>Cancel</button>
       </form>
     </div>
 
     <div className="row">
-      <div className="container py-1 col-lg">
+      <div className="container py-1 col-lg px-4">
         <div className="row row-cols-1 row-cols-md-2">
-          {post.map(item => (
+          {post.length && (post.map(item => (
             <CardList key={item.id} cards={item} />
-          ))}
+          )))}
           {bool &&
 
-            (<div class="alert alert-primary d-flex align-items-center" role="alert">
+            (<div className="alert alert-primary d-flex align-items-center" role="alert">
               <div>
                 No Posts Found with the Search Term {value}
               </div>
@@ -75,6 +70,19 @@ function App() {
         <Table postData={postData} />
       </div>
     </div>
+    <footer className="bg-warning py-3">
+  <div className="container">
+    <div className="row">
+      <div className="col-md-6 text-center text-md-start">
+        <p className="text-white">Copyright © 2023 Your Company.
+          All rights reserved.</p>
+      </div>
+      <div className="col-md-6 text-center text-md-end">
+        <p className="text-white">Designed by Your Name</p>
+      </div>
+    </div>
+  </div>
+</footer>
 
   </main>;
 }

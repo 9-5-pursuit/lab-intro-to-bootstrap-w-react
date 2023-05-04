@@ -17,9 +17,9 @@ const CardList = ({ cards }) => {
       <div className="card">
         <img src={nimages[Math.floor(Math.random() * nimages.length)]} className='img-fluid' alt='city'/>
         <div className="card-header">{cards.title}</div>
-        <h6 class="card-subtitle px-3 py-1 text-muted">{cards.location}</h6>
+        <h6 className="card-subtitle px-3 py-1 text-muted">{cards.location}</h6>
         <div className="card-body">
-          <p className="card-text">{cards.content}</p>
+          <p className="card-text">{cards.content.substring(0, 30)}...</p>
           <a href="#" className="btn btn-warning">Go to post</a>
         </div>
       </div>

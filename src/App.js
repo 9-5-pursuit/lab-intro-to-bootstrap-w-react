@@ -1,7 +1,7 @@
 import postData from "./data/posts.json";
 import CardList from "./Components/CardList";
 import Table from "./Components/Table";
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function App() {
 
@@ -10,11 +10,19 @@ function App() {
   const [bool, setBool] = useState(false)
 
   function handlePosts(posts) {
-    const inputstring = posts.target.value
-    setPost(post.filter(item => item.location.includes(inputstring)))
-    setValue(inputstring)
-    if (!post.length) setBool(true)
+
+    setValue(posts.target.value)
   }
+
+  useEffect(() => {
+    setPost(post.filter(item => item.location.toLowerCase().includes(value.toLowerCase())))
+  }, [value])
+
+  useEffect(() => {
+    if (!post.length) setBool(true)
+  }, [post])
+
+
   return <main>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">

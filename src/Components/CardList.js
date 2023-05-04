@@ -20,7 +20,7 @@ const CardList = ({ cards }) => {
         <h6 class="card-subtitle px-3 py-1 text-muted">{cards.location}</h6>
         <div className="card-body">
           <p className="card-text">{cards.content}</p>
-          <a href="#" className="btn btn-primary">Go to post</a>
+          <a href="#" className="btn btn-warning">Go to post</a>
         </div>
       </div>
     </div>

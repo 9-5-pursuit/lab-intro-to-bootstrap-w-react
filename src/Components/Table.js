@@ -13,7 +13,7 @@ export default function Table({ postData }) {
     return (
 
         <>
-            <h3 className="display-5">Best Sellers</h3>
+            <h3 className="display-5">Posts by location</h3>
             <table className="table table-striped table-hover text-center">
                 <thead>
                     <tr>
@@ -61,10 +61,6 @@ export default function Table({ postData }) {
                     <tr>
                         <td>Dubai</td>
                         <td>{showCount(postData, 'Dubai')}</td>
-                    </tr>
-                    <tr>
-                        <td>Miami</td>
-                        <td>{showCount(postData, 'Miami')}</td>
                     </tr>
                 </tbody>
             </table>

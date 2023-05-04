@@ -48,6 +48,7 @@ function App() {
             {/* Render the PostAside component and pass in the postData prop */}
             <PostAside postData={postData} />
           </aside>
+          <Footer />
         </main>
       </div>
     </>

@@ -17,7 +17,6 @@ function App() {
     if (!post.length) setBool(true)
   }, [post])
 
-
   return <main>
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -53,7 +52,7 @@ function App() {
     <div className="row">
       <div className="container py-1 col-lg px-4">
         <div className="row row-cols-1 row-cols-md-2">
-          {post.length && (post.map(item => (
+          {!bool && (post.map(item => (
             <CardList key={item.id} cards={item} />
           )))}
           {bool &&

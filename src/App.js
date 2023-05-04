@@ -21,21 +21,20 @@ function App() {
     <>
       <NavigationBar />
       <HeroQuote />
-      <div className="container-lg bd-gutter mt-3 my-md-4 bd-layout">
+      <div className="container-lg row g-2">
         <SearchBar setSearchTerm={setSearchTerm} />
-        <main className="bd-main order-1">
-          <div className="bd-sidebar">
+        <main className="bd-main  col-md-8">
+          <div className="bd-sidebar ">
             <Cards
               postData={postData}
               images={images}
               searchTerm={searchTerm}
             />
           </div>
-
-          <aside className="bd-toc mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
-            <Posts postData={postData} />
-          </aside>
         </main>
+        <aside className="text-body-secondary col-md-4">
+          <Posts postData={postData} />
+        </aside>
       </div>
       <Footer />
     </>

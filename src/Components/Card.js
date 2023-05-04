@@ -20,7 +20,11 @@ export default function Card({ item, images }) {
       style={{ width: "18rem", maxheight: "20rem" }}
       key={itemID}
     >
-      <img src={imagePath} className="card-img-top" alt="..." />
+      <img
+        src={imagePath}
+        className="card-img-top post-image-height"
+        alt="..."
+      />
       <div className="card-body">
         <h5 className="card-title">{itemTitle}</h5>
         <p className="card-text">{itemLocal}</p>

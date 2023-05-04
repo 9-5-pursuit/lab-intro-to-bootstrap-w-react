@@ -12,7 +12,9 @@ export default function PostsAside({ postData }) {
   }
   return (
     <div className="container">
-      <h3>Posts by location</h3>
+      <h3>
+        Posts by <span className="text-warning">location</span>
+      </h3>
       <table className="table table-sm">
         <thead>
           <tr>

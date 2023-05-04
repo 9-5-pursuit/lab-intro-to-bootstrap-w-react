@@ -1,17 +1,19 @@
 import postData from "./data/posts.json";
 import CardList from "./Components/CardList";
 import Table from "./Components/Table";
-import {useState} from 'react'
+import { useState } from 'react'
 
 function App() {
- 
+
   const [post, setPost] = useState(postData)
   const [value, setValue] = useState("")
+  const [bool, setBool] = useState(false)
 
   function handlePosts(posts) {
     const inputstring = posts.target.value
     setPost(post.filter(item => item.location.includes(inputstring)))
-    setValue(inputstring) 
+    setValue(inputstring)
+    if (!post.length) setBool(true)
   }
   return <main>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -40,8 +42,8 @@ function App() {
     <div className="py-4">
       <form className="">
         <label for="search" className="form-label">Search Posts by Location:</label>
-        <input type="text" value={value} className="d-inline w-50" id="search" placeholder="Enter location" onChange={(e) => handlePosts(e)}/>
-        <button type="click" className="btn btn-secondary" onClick={()=> setPost(postData)}>Cancel</button>
+        <input type="text" value={value} className="d-inline w-50 m-2" id="search" placeholder="Enter location" onChange={(e) => handlePosts(e)} />
+        <button type="click" className="btn btn-secondary m-3" onClick={() => setPost(postData)}>Cancel</button>
       </form>
     </div>
 
@@ -51,10 +53,18 @@ function App() {
           {post.map(item => (
             <CardList key={item.id} cards={item} />
           ))}
+          {bool &&
+
+            (<div class="alert alert-primary d-flex align-items-center" role="alert">
+              <div>
+                No Posts Found with the Search Term {value}
+              </div>
+            </div>)
+          }
         </div>
       </div>
       <div className="col-lg px-4">
-        <Table />
+        <Table postData={postData} />
       </div>
     </div>
 

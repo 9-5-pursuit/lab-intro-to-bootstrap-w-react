@@ -2,27 +2,12 @@ import postData from "./data/posts.json";
 import images from "./images/index.js";
 
 let arr = [];
-let otherArr = [];
 
 for (let i of postData) {
   arr.push(i.location);
-  otherArr.push(i.location.replace(/\s+/g, "-").toLowerCase());
 }
 
-// console.log(otherArr);
-
-let x = "";
-
-function returnCity() {
-  for (let i of otherArr) {
-    x = i;
-  }
-}
-
-returnCity();
-// console.log(x);
 let obj = {};
-
 for (let element of arr) {
   if (obj[element]) {
     obj[element] += 1;
@@ -32,12 +17,6 @@ for (let element of arr) {
 }
 
 let result = Object.entries(obj).map(([key, value]) => ({ key, value }));
-
-// for (let i of otherArr) {
-//   console.log(images[i]);
-// }
-
-// console.log(images);
 
 function handleSearch() {}
 
@@ -98,7 +77,7 @@ function App() {
 
             <button
               className="btn btn-outline-warning text-dark bg-warning my-2 my-sm-0"
-              type="submit"
+              type="reset"
             >
               Cancel
             </button>
@@ -112,7 +91,9 @@ function App() {
                   <div key={id} /*{toggle} */ className="col">
                     <div className="card">
                       <img
-                        src={images[otherArr[0]]}
+                        src={
+                          images[location.replace(/\s+/g, "-").toLowerCase()]
+                        }
                         className="card-img-top"
                         alt="#"
                       />
@@ -123,6 +104,9 @@ function App() {
                             (content.length > 35 ? "..." : "")}
                         </p>
                         <h6 className="card-subtitle mb-2 text-body-secondary">
+                          {console.log(
+                            images[location.replace(/\s+/g, "-").toLowerCase()]
+                          )}
                           {location}
                         </h6>
 

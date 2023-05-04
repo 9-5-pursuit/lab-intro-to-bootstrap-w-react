@@ -8,6 +8,10 @@
   height: 250px;
 }
 
+.card img {
+  max-height: 200px;
+}
+
 .blog {
   font-family: great vibes;
   font-size: xx-large;
@@ -34,20 +38,25 @@ nav {
   grid-area: nav;
 }
 
+.navbar {
+  padding: 30px;
+  margin-bottom: 10px;
+}
 .quote {
-  height: 20px;
+  padding: 20px;
 }
 
-.navbar,
-.quote {
-  padding: 3.5%;
+.quote,
+.navbar {
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .middle-section {
   padding: 5%;
   display: grid;
   grid-template-columns: 2.5fr 1fr;
-  grid-template-rows: 0.1fr 0.1fr;
+  grid-template-rows: 0.1fr;
 
   grid-template-areas: "search-bar search-bar" "main table";
 

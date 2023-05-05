@@ -28,19 +28,10 @@
   font-family: great vibes;
 }
 
-.top-section {
-  grid-template-rows: 0.1fr 0.1fr;
-  grid-template-areas: "nav nav nav";
-}
-
-nav {
-  height: 1rem;
-  grid-area: nav;
-}
-
 .navbar {
   padding: 30px;
   margin-bottom: 10px;
+  height: 75px;
 }
 .quote {
   padding: 20px;
@@ -52,51 +43,11 @@ nav {
   padding-right: 5%;
 }
 
-.middle-section {
-  padding: 5%;
-  display: grid;
-  grid-template-columns: 2.5fr 1fr;
-  grid-template-rows: 0.1fr;
-
-  grid-template-areas: "search-bar search-bar" "main table";
-
-  grid-row-gap: 20px;
-  grid-column-gap: 20px;
-}
-
-.search-bar {
-  grid-area: search-bar;
-}
-
-.main {
-  grid-area: main;
-}
-
-.footer {
-  grid-area: footer;
-  background-color: #f7bf0a;
-  text-align: center;
+.alert {
+  display: none;
 }
 
 @media only screen and (max-width: 550px) {
-  .app {
-    grid-template-columns: 1fr;
-  }
-  .middle-section {
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 0.1fr;
-    grid-template-areas: "main" "table";
-  }
-
-  .main {
-    grid-area: main;
-    margin-top: 7%;
-  }
-
-  .table {
-    grid-area: table;
-  }
-
   .quote,
   .search-bar {
     display: none;

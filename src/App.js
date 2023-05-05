@@ -1,6 +1,6 @@
 import { useState } from "react";
 import postData from "./data/posts.json";
-import images from "./images/index";
+import postImages from "./images/index";
 
 function Header() {
   return (
@@ -120,7 +120,7 @@ function PostCard({ content, location, title }) {
     <div className="col-12 col-md-6">
       <div className="card">
         <img
-          src={images[normalizedLocation]}
+          src={postImages[normalizedLocation]}
           className="card-img-top post-image-height object-fit-cover"
           alt="..."
         />
@@ -205,6 +205,14 @@ function Footer() {
   );
 }
 
+function SearchError() {
+  return (
+    <div className="alert alert-danger" role="alert">
+      No Posts found with the specefied search term. Please try again.
+    </div>
+  );
+}
+
 function App() {
   const [posts, setPosts] = useState(postData);
 
@@ -227,7 +235,7 @@ function App() {
       <Header />
       <Hero />
       <Search handlePostFiltering={handlePostFiltering} />
-
+      {posts.length === 0 && <SearchError />}
       <PostsContainer>
         <PostsList posts={posts} />
         <PostsByLocation />

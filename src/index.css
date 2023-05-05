@@ -4,6 +4,12 @@
   font-family: "Great Vibes", cursive;
 }
 
-.post-image-height {
-  height: 250px;
+.card {
+  height: 50vh;
+}
+.card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

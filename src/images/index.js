@@ -21,5 +21,4 @@ const images = {
   sevilla: sevilla,
   shibuya: shibuya,
 };
-
 export default images;

@@ -13,7 +13,7 @@ export default function Table({ postData }) {
     return (
 
         <>
-            <h3 className="display-5">Posts by location</h3>
+            <h3 className="display-5">Posts by <span className="text-warning">location</span></h3>
             <table className="table table-striped table-hover text-center">
                 <thead>
                     <tr>
@@ -22,46 +22,16 @@ export default function Table({ postData }) {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Seattle</td>
-                        <td>{showCount(postData, 'Seattle')}</td>
-                    </tr>
-                    <tr>
-                        <td>Shibuya</td>
-                        <td>{showCount(postData, 'Shibuya')}</td>
-                    </tr>
-                    <tr>
-                        <td>Chicago</td>
-                        <td>{showCount(postData, 'Chicago')}</td>
-                    </tr>
-                    <tr>
-                        <td>San Francisco</td>
-                        <td>{showCount(postData, 'San Francisco')}</td>
-                    </tr>
-                    <tr>
-                        <td>San Diego</td>
-                        <td>{showCount(postData, 'San Diego')}</td>
-                    </tr>
-                    <tr>
-                        <td>Burano</td>
-                        <td>{showCount(postData, 'Burano')}</td>
-                    </tr>
-                    <tr>
-                        <td>Sevilla</td>
-                        <td>{showCount(postData, 'Sevilla')}</td>
-                    </tr>
-                    <tr>
-                        <td>Porto</td>
-                        <td>{showCount(postData, 'Porto')}</td>
-                    </tr>
-                    <tr>
-                        <td>London</td>
-                        <td>{showCount(postData, 'London')}</td>
-                    </tr>
-                    <tr>
-                        <td>Dubai</td>
-                        <td>{showCount(postData, 'Dubai')}</td>
-                    </tr>
+                    {
+                        postData.map((item, i) => {
+                            return (
+                                <tr key={i}>
+                                    <td>{item.location}</td>
+                                    <td><span className="badge text-bg-secondary">{showCount(postData, item.location)}</span></td>
+                                </tr> 
+                            )
+                        })
+                    }
                 </tbody>
             </table>
         </>

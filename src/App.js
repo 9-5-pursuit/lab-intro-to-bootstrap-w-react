@@ -20,7 +20,7 @@ function App() {
   return <main>
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">Travel <span className="script-font">Blog</span></a>
+        <a className="navbar-brand" href="#">Travel <span className="script-font text-warning">Blog</span></a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -41,16 +41,16 @@ function App() {
         <h1 className="script-font">Travel is the only thing you buy that makes you richer...</h1>
       </div>
     </header>
-    <div className="py-4 d-none d-sm-block">
-      <form className="">
+    <div className="py-4 px-5 d-none d-sm-block">
+      <form>
         <label htmlFor="search" className="form-label">Search Posts by Location:</label>
-        <input type="text" value={value} className="d-inline w-50 m-2 px-10" id="search" placeholder="Enter location" onChange={(e) => setValue(e.target.value)} />
+        <input type="text" value={value} className="d-inline m-2 w-50 px-10" id="search" placeholder="Enter location" onChange={(e) => setValue(e.target.value)} />
         <button type="click" className="btn btn-secondary m-3" onClick={() => setPost(postData)}>Cancel</button>
       </form>
     </div>
 
     <div className="row">
-      <div className="container py-1 col-lg px-4">
+      <div className="container py-1 col-lg-9 px-4">
         <div className="row row-cols-1 row-cols-md-2">
           {!bool && (post.map(item => (
             <CardList key={item.id} cards={item} />
@@ -65,23 +65,23 @@ function App() {
           }
         </div>
       </div>
-      <div className="col-lg px-4">
+      <div className="col-lg-3 px-4">
         <Table postData={postData} />
       </div>
     </div>
     <footer className="bg-warning py-3">
-  <div className="container">
-    <div className="row">
-      <div className="col-md-6 text-center text-md-start">
-        <p className="text-white">Copyright © 2023 Your Company.
-          All rights reserved.</p>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6 text-center text-md-start">
+            <p className="text-white">Copyright © 2023 Your Company.
+              All rights reserved.</p>
+          </div>
+          <div className="col-md-6 text-center text-md-end">
+            <p className="text-white">Designed by Your Name</p>
+          </div>
+        </div>
       </div>
-      <div className="col-md-6 text-center text-md-end">
-        <p className="text-white">Designed by Your Name</p>
-      </div>
-    </div>
-  </div>
-</footer>
+    </footer>
 
   </main>;
 }

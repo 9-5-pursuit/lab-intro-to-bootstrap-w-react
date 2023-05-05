@@ -9,7 +9,7 @@ import seattle from "../images/seattle.jpg";
 import sevilla from "../images/sevilla.jpg";
 import shibuya from "../images/shibuya.jpg";
 
-const images = {
+const postImages = {
   burano: burano,
   chicago: chicago,
   dubai: dubai,
@@ -22,4 +22,4 @@ const images = {
   shibuya: shibuya,
 };
 
-export default images;
+export default postImages;

@@ -2,6 +2,13 @@ import { useState } from "react";
 import postData from "./data/posts.json";
 import postImages from "./images/index";
 
+/* I decided to try condensing the bootstrap implementation and found that "navbar-brand" is a style, not just a className. 
+I played with the 'fs1' and changed it to other 'fs(insert number here)' and found it works like the h1-h6 tags.
+I had to look up the 'me-auto' and 'ms-5' on the unordered list. Margin end auto, in this case meaning margin-right:auto. 
+  Making ms margin-left and set to 5 meaning 3rem.
+In reviewing just one function I found how helpful and daunting bootstrap can be.
+*/
+
 function Header() {
   return (
     <header id="header">
@@ -29,6 +36,15 @@ function Header() {
   );
 }
 
+/*
+Unsure of why this function is called Hero...
+I think I now understand that the className is necessary for everything we call bootrap into and the different tags.
+In the case of the #hero className, we're setting the background body of this section to the tertiary color.
+The borders are being named to point out that a border should exist on the top and bottom. 
+And the diplay is set to none until on medium, large and extra large devices.
+The blockquote tag is being set to blockquote with a 0 margin and a 3rem padding on top and bottom. And, of course, text align: center.
+*/
+
 function Hero() {
   return (
     <div
@@ -45,6 +61,11 @@ function Hero() {
     </div>
   );
 }
+
+/*
+Here I had never considered nesting my handle functions inside a function kept outside my App function so I found this intriguing.
+
+*/
 
 function Search({ handlePostFiltering }) {
   const [searchTerm, setSearchTerm] = useState("");

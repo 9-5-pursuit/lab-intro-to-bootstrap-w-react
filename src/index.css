@@ -1,9 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 
-.script-font {
+* {
+  margin: 0;
+  
+  box-sizing: border-box;
+}
+
+.logo {
   font-family: "Great Vibes", cursive;
+  
+}
+
+.script-font {
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+  font-family: "Great Vibes", cursive;
+  display: flex;
+  min-height: 30vh;
+  padding: 0;
 }
 
 .post-image-height {
   height: 250px;
 }
+
+@media (max-width: 576px) {
+  .hide-on-mobile, form.hide-on-mobile {
+    display: none;
+  }
+}
+
+

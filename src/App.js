@@ -19,7 +19,7 @@ function App() {
 
     <PosterContainer>
       <PostList posts={posts} />
-      <PostLocations posts={posts}/>
+      <PostLocations postData={postData} />
     </PosterContainer>
   </main>;
 }

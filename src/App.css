@@ -1,0 +1,20 @@
+/* .main,
+.search{
+    width: 75%;
+    margin: auto;
+    display: grid;
+}
+.posts{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+/* 
+.posts{
+    display: grid;
+  
+
+}
+.card{
+    height: 400px;
+    width: 400px;
+} */ 
